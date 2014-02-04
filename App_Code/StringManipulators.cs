@@ -40,6 +40,9 @@ namespace CustomStrings
                 return input;
             }
         }
+
+        public static string dateStampNoID = DateTime.Now.Year.ToString() + DateTime.Now.Month + DateTime.Now.Day + "_" + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString() + DateTime.Now.Millisecond.ToString();
+
     }
 
     public static class AntiXSSMethods

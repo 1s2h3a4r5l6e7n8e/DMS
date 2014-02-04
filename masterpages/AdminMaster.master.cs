@@ -8,20 +8,38 @@ using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-//../images/Header.png
+using UserManagement;
 
 public partial class MasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         lblDate.Text = "Date: "+ DateTime.Now.Month.ToString() + "/" + DateTime.Now.Day.ToString() + "/" + DateTime.Now.Year.ToString();
+        CheckUser();
     }
 
 
     protected void btnLogout_Click(object sender, EventArgs e)
     {
-       
+        Session.Clear();
+        Response.Redirect("~/Default.aspx");
     }
+
+
+    private void CheckUser()
+    {
+        try
+        {
+            string Username = Employees.ReturnUserName(int.Parse(Session["EmployeeID"].ToString()));
+            lblUsername.Text = Username;
+        }
+        catch
+        {
+            Session.Clear();
+            Response.Redirect("~/Default.aspx");
+        }
+    }
+
 
     void RenderMenuItem(string title, string address, StringBuilder output)
     {

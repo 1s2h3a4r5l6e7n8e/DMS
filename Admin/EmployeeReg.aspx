@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/masterpages/AdminMaster.master" AutoEventWireup="true" CodeFile="EmployeeReg.aspx.cs" Inherits="Admin_EmployeeReg" %>
-
-
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
+
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" Runat="Server">
@@ -25,6 +24,24 @@
             <td class="style1" colspan="3">
                 <h1>
                     Employee Registration</h1>
+            </td>
+        </tr>
+        <tr>
+            <td class="style3">
+                Date of Employment</td>
+            <td class="style2">
+                <asp:TextBox ID="txtDateEmployeed" runat="server" Width="180px" Placeholder="-Click to Pick Date-"></asp:TextBox>
+
+                 <asp:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="txtDateEmployeed">
+                </asp:CalendarExtender>
+                <asp:MaskedEditExtender Mask="99/99/9999" TargetControlID="txtDateEmployeed" MaskType="Date" ID="MaskedEditExtender2" runat="server">
+                </asp:MaskedEditExtender>
+
+            </td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" 
+                    ControlToValidate="txtDateEmployeed" 
+                    ErrorMessage="Please indicate Date of Employment!" ForeColor="Red" ValidationGroup="RegEmployee">*</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -117,6 +134,7 @@
                 <asp:TextBox ID="txtEmail" runat="server" Width="180px"></asp:TextBox>
             </td>
             <td>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ControlToValidate="txtEmail" Text="*" Display="Dynamic" runat="server" ForeColor="Red" ErrorMessage="Please enter a valid email address!" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"  ValidationGroup="RegEmployee"></asp:RegularExpressionValidator>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
                     ControlToValidate="txtEmail" ErrorMessage="Please indicate Email!" 
                     ForeColor="Red" ValidationGroup="RegEmployee">*</asp:RequiredFieldValidator>
@@ -160,6 +178,7 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" 
                     ControlToValidate="txtPwd1" ErrorMessage="Please indicate Password!" 
                     ForeColor="Red" ValidationGroup="RegEmployee">*</asp:RequiredFieldValidator>
+                <%--<asp:CompareValidator ForeColor="Red" ControlToValidate="txtPwd2" ControlToCompare="txtPwd1" ValidationGroup="RegEmployee" ID="CompareValidator2" runat="server" ErrorMessage="Passwords don't match!">*</asp:CompareValidator>--%>
             </td>
         </tr>
         <tr>
@@ -175,35 +194,32 @@
                     ValidationGroup="RegEmployee">*</asp:CompareValidator>
             </td>
         </tr>
+        
         <tr>
             <td class="style3">
-                Date of Employment</td>
+                Photo: (..JPG, MAX 1MB)</td>
             <td class="style2">
-                <asp:TextBox ID="txtDateEmployeed" runat="server" Width="180px" Placeholder="-Click to Pick Date-"></asp:TextBox>
-
-                 <asp:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="txtDateEmployeed">
-                </asp:CalendarExtender>
-                <asp:MaskedEditExtender Mask="99/99/9999" TargetControlID="txtDateEmployeed" MaskType="Date" ID="MaskedEditExtender2" runat="server">
-                </asp:MaskedEditExtender>
+                <asp:FileUpload ID="FupPhoto" runat="server" />
 
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" 
-                    ControlToValidate="txtDateEmployeed" 
-                    ErrorMessage="Please indicate Date of Employment!" ForeColor="Red">*</asp:RequiredFieldValidator>
-            </td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="style3">
                 &nbsp;</td>
             <td class="style2">
+                <asp:ValidationSummary ID="ValidationSummary2" runat="server" HeaderText="Add employee cannot be completed. Please check below:" style="color: #FF0000" ValidationGroup="RegEmployee" />           
+                <asp:Label ForeColor="Red" ID="lblAlert" runat="server" Text=""></asp:Label>
+                <br />
                 <asp:Button ID="btnSubmit" runat="server" Text="Submit" 
                     onclick="btnSubmit_Click" ValidationGroup="RegEmployee" />
 &nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
             </td>
             <td>
-                &nbsp;</td>
+                
+            </td>
         </tr>
     </table>
     <div>

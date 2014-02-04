@@ -16,8 +16,6 @@
 </head>
 <body>
 <form runat=server>
-<%--<asp:ScriptManager ID="ScriptManager1" runat="server">
-</asp:ScriptManager>--%>
 <asp:ToolkitScriptManager runat="Server" />
     <div class="BackgroundGradient"></div>
     <div class="BodyContent">
@@ -30,8 +28,6 @@
             <img class="float-right" src="../images/Logo.png"/>
             <center><h1>E.G.I. <a href="#">Dormitory Management System</a></h1></center>
               <h2>
-                  &nbsp;</h2>
-              <h2>
                   <asp:Label ID="Label1" runat="server" Text="Hi, "></asp:Label>
                   <asp:Label ID="lblUsername" runat="server"></asp:Label>
             </h2>
@@ -41,6 +37,7 @@
         </div><div class="Menu">
              <ul>
                  <%--<%= RenderMenu() %>--%>
+                 <li><asp:LinkButton ID="lnkBtnChangeMyPass" runat="server" class="MenuButton" PostBackUrl="~/Admin/ChangeMyPassword.aspx"><span>Change My Password</span></asp:LinkButton></li>
              <li><asp:LinkButton ID="LinkButton2" runat="server" class="MenuButton" onclick="btnLogout_Click"><span><font color="red"><b>Log-Out</b></font></span></asp:LinkButton></li>
              </ul>
         </div><div class="Columns"><div class="Column1">
@@ -51,7 +48,10 @@
             <div class="BlockContentBorder">
 
                 <ul>
-                    <li><asp:LinkButton CssClass="style1" ID="lnkAddEmployee" runat="server" PostBackUrl="~/Admin/EmployeeReg.aspx">Add Employee</asp:LinkButton></li>
+                    <%--<li><a href="google.com">test</a></li>--%>
+                    <li><asp:LinkButton CssClass="style1" ID="lnkManageEmployee" runat="server" PostBackUrl="~/Admin/ManageEmployees.aspx">Manage Employees</asp:LinkButton></li>
+                    <li><asp:LinkButton CssClass="style1" ID="lnkManageTenant" runat="server" PostBackUrl="~/Admin/ManageTenant.aspx">Manage Tenants</asp:LinkButton></li>
+                    <li><asp:LinkButton CssClass="style1" ID="lnkRoomMgt" runat="server" PostBackUrl="~/Admin/RoomMgt.aspx">Room Management</asp:LinkButton></li>
                     <li><asp:LinkButton CssClass="style1" ID="lnkAddAnnouncement" runat="server" PostBackUrl="~/Admin/Announcement.aspx">Create an Announcement</asp:LinkButton></li>
 
                    <%-- <li><a href="" class="style1"><strong>Tenant Management</strong></a></li>
