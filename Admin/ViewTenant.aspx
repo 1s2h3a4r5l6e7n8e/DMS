@@ -184,10 +184,27 @@
             </td>
         </tr>
         <tr>
+<<<<<<< HEAD
             <td class="auto-style3">- Reset Password -</td>
             <td class="auto-style4">
                 <asp:Button ID="btnResetPassword" runat="server" Text="Reset Password" OnClick="btnResetPassword_Click" />
 
+=======
+            <td class="auto-style2">Reset Password</td>
+            <td>
+                <asp:Button ID="btnResetPassword" runat="server" Text="Reset Password" OnClick="btnResetPassword_Click" />
+
+    <asp:ModalPopupExtender ID="MPEResetPass0" TargetControlID="btnResetPassword" 
+                    PopupControlID="ResetPWDPanel" CancelControlID="btnCancel" runat="server">
+    </asp:ModalPopupExtender>
+
+            </td>
+        </tr>
+        <tr>
+            
+                
+
+>>>>>>> c7617e9042a340e3d4ec1c689d4c0b2f54ecd303
     <asp:ModalPopupExtender ID="MPEResetPass" TargetControlID="btnResetPassword" PopupControlID="ResetPWDPanel" CancelControlID="btnCancel" runat="server">
     </asp:ModalPopupExtender>
 
