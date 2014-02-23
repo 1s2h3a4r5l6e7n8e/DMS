@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Auditor;
 
 public partial class Admin_ManageAsset : System.Web.UI.Page
 {

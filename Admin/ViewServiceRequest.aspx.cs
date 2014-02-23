@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using DBHelpers;
 using UserManagement;
 using CustomStrings;
+using Auditor;
 
 public partial class Admin_ViewServiceRequest : System.Web.UI.Page
 {

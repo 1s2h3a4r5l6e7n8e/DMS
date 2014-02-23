@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UserManagement;
+using Auditor;
 
 public partial class Admin_ManageAssets : System.Web.UI.Page
 {

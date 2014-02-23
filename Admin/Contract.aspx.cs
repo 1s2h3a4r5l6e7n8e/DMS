@@ -8,6 +8,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using CustomStrings;
 using DBHelpers;
+using Auditor;
 
 public partial class Admin_Contract : System.Web.UI.Page
 {

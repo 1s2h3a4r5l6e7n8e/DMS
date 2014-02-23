@@ -11,6 +11,7 @@ using ImageProcessor;
 using System.IO;
 using BCryptEncryption;
 using Globals;
+using Auditor;
 
 public partial class Admin_ViewEmployee : System.Web.UI.Page
 {

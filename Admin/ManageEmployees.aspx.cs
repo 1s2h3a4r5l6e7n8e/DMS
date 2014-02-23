@@ -9,6 +9,7 @@ using DBHelpers;
 using CustomStrings;
 using System.Data;
 using Globals;
+using Auditor;
 
 public partial class Admin_Default2 : System.Web.UI.Page
 {

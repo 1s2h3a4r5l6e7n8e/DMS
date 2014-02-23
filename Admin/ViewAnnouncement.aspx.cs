@@ -8,6 +8,7 @@ using DBHelpers;
 using Globals;
 using System.Data.SqlClient;
 using CustomStrings;
+using Auditor;
 
 public partial class Admin_ViewAnnouncements : System.Web.UI.Page
 {

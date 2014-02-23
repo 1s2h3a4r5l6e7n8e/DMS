@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data.SqlClient;
 using DBHelpers;
+using Auditor;
 
 public partial class Admin_AddRoom : System.Web.UI.Page
 {

@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data.SqlClient;
 using DBHelpers;
+using Auditor;
+
 
 public partial class Admin_AddBedspace : System.Web.UI.Page
 {

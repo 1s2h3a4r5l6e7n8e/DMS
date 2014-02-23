@@ -10,6 +10,7 @@ using DBHelpers;
 using ImageProcessor;
 using System.IO;
 using CustomStrings;
+using Auditor;
 
 public partial class Admin_ViewTenant : System.Web.UI.Page
 {
@@ -18,7 +19,7 @@ public partial class Admin_ViewTenant : System.Web.UI.Page
     string photofile, username;
     protected void Page_Load(object sender, EventArgs e)
     {
-<<<<<<< HEAD
+
         TenantID = int.Parse(Request.QueryString["ID"]);
         if (!IsPostBack)
         {
@@ -37,7 +38,7 @@ public partial class Admin_ViewTenant : System.Web.UI.Page
         {
             photofile = ViewState["photofile"].ToString();
             username = ViewState["username"].ToString();
-=======
+
         try
         {
             TenantID = int.Parse(Request.QueryString["ID"]);
@@ -66,7 +67,8 @@ public partial class Admin_ViewTenant : System.Web.UI.Page
 
             Response.Redirect("ManageTenants.aspx");
             Response.Write(ex.Message);
->>>>>>> c7617e9042a340e3d4ec1c689d4c0b2f54ecd303
+
+        }
         }
     }
 
@@ -197,11 +199,10 @@ public partial class Admin_ViewTenant : System.Web.UI.Page
             MPEResetPass.Hide();
         }
     }
-<<<<<<< HEAD
-=======
+
     protected void btnResetPassword_Click(object sender, EventArgs e)
     {
 
     }
->>>>>>> c7617e9042a340e3d4ec1c689d4c0b2f54ecd303
+
 }
